@@ -1,0 +1,15 @@
+{
+  "name": "webcrawler-http",
+  "version": "1.0.0",
+  "description": "The Webcrawler-http is a command line application that uses Node.js to crawl a website and generate a report of the internal linking structure of the website. The report provides information about which pages link to which other pages on the site. This tool is useful for web marketers or SEO search engine optimization experts.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
