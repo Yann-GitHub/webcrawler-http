@@ -1,5 +1,13 @@
 const { JSDOM } = require('jsdom');
 
+/**
+ * Crawls a webpage and its links to recursively build a map of all unique pages within the same domain as the base URL.
+ * 
+ * @param {string} baseURL - The base URL of the domain being crawled. 
+ * @param {string} currentURL - The URL of the webpage being crawled.
+ * @param {Object} pages - An object representing the map of all unique pages within the domain.
+ * @returns {Promise<Object>} An object representing the map of all unique pages within the domain.
+ */
 async function crawlPage(baseURL, currentURL, pages) {
     
 
@@ -46,8 +54,6 @@ async function crawlPage(baseURL, currentURL, pages) {
     }
 
     return pages;
-    
-    
 }
 
 
