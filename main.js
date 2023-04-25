@@ -1,5 +1,5 @@
 const { crawlPage } = require('./crawl.js');
-const { printReport } = require('./report.js');
+const { printReport, writeReportToFile } = require('./report.js');
 
 /**
  * The main function for crawling a website and generating a report of all unique pages within the domain.
@@ -28,6 +28,7 @@ async function main () {
     const pages = await crawlPage(baseURL, baseURL, {});
 
     printReport(pages)
+    writeReportToFile(pages, 'report.csv')
 
 }
 

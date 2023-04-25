@@ -48,4 +48,4 @@ Replace `<url>` with the URL of the website you want to crawl. For example:
 node index.js https://www.example.com
 ```
 
-The application will start crawling the website and generate a report of the internal linking structure of the website. The report will be saved in a file named `report.txt` in the same directory where the application is located.
+The application will start crawling the website and generate a report of the internal linking structure of the website. The report will be saved in a file named `report.txt` in the same directory where the application is located, and also printed in the terminal.

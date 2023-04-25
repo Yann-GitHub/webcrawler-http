@@ -1,3 +1,32 @@
+const fs = require('fs');
+// The report is output to a CSV file using the 'fs' module to allow for easy analysis in a spreadsheet.
+//  a built-in module in Node.js that provides functions for interacting with the file system.
+
+/**
+ * Write report data to a CSV file.
+ *
+ * @function writeReportToFile
+ * @param {Object} report - The report data to write to file.
+ * @param {string} filename - The name of the output CSV file.
+ * @returns {void}
+ */
+function writeReportToFile(report, filename) {
+  const rows = [];
+
+  // Add header row
+  rows.push(['Page URL', 'Number of Visits']);
+
+  // Add data rows
+  for (const [pageURL, numVisits] of Object.entries(report)) {
+    rows.push([pageURL, numVisits]);
+  }
+
+  // Write CSV file
+  const csv = rows.map(row => row.join(',')).join('\n');
+  fs.writeFileSync(filename, csv);
+}
+
+
 /**
  * Prints a report of pages sorted by descending hit count.
  * 
@@ -41,5 +70,6 @@ function sortPages(pages) {
 
 module.exports = {
     sortPages,
-    printReport
+    printReport,
+    writeReportToFile
 }
